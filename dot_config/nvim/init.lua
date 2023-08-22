@@ -1,0 +1,15 @@
+require 'user.options'
+require 'user.plugins'
+require 'user.keymaps'
+require 'user.theme'
+
+require 'user.hop'
+require 'user.cmp'
+require 'user.lualine'
+require 'user.neoscroll'
+require 'user.treesitter'
+require 'user.which-key'
+require 'user.neo-tree'
+
+require 'user.comment'
+require 'user.lsp'

@@ -1,0 +1,6 @@
+configuration {
+    font: "monospace 12";
+    modi: [drun];
+}
+
+@theme "~/.config/rofi/oneline.rasi"

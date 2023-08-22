@@ -1,0 +1,48 @@
+* {
+    bg:         #282A2E;
+    bg-alt:     #373B41;
+    foreground: #C5C8C6;
+    primary:    #F0C674;
+    secondary:  #8ABEB7;
+
+    text-color: @foreground;
+    background-color: @bg;
+}
+
+window {
+    anchor:     north;
+    location:   north;
+    width:      100%;
+    padding:    4px;
+    children:   [ horibox ];
+}
+
+horibox {
+    orientation: horizontal;
+    children:   [ prompt, entry, listview ];
+}
+
+listview {
+    layout:     horizontal;
+    spacing:    5px;
+    lines:      100;
+}
+
+entry {
+    expand:     false;
+    width:      10em;
+}
+
+element {
+    padding: 0px 5px;
+}
+
+element selected {
+    background-color: @bg-alt;
+    text-color: @primary;
+}
+
+element-text, element-icon {
+  background-color: inherit;
+  text-color: inherit;
+}
