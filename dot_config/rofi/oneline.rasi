@@ -1,9 +1,9 @@
 * {
-    bg:         #282A2E;
-    bg-alt:     #373B41;
-    foreground: #C5C8C6;
-    primary:    #F0C674;
-    secondary:  #8ABEB7;
+    bg:         #282828;
+    bg-alt:     #1d2021;
+    foreground: #ebdbb2;
+    primary:    #d79921;
+    secondary:  #458588;
 
     text-color: @foreground;
     background-color: @bg;

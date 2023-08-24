@@ -22,7 +22,7 @@ set("n", "<C-k>", "<C-w>k", opts)
 set("n", "<C-l>", "<C-w>l", opts)
 
 -- File exploration
-set("n", "<leader>t", ":NeoTreeShowToggle<CR>", opts)
+set("n", "<leader>t", ":Neotree toggle<CR>", opts)
 set("n", "<leader><leader>f", rtelescope.find_files, opts)
 
 -- File navigation/editing
