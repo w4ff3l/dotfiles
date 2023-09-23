@@ -6,35 +6,28 @@
 $env.JAVA_HOME = '/usr/lib/jvm/java-17-openjdk'
 
 def create_left_prompt [] {
-    mut home = ""
-    try {
-        if $nu.os-info.name == "windows" {
-            $home = $env.USERPROFILE
-        } else {
-            $home = $env.HOME
-        }
-    }
+    let home =  $nu.home-path
 
     let dir = ([
-        ($env.PWD | str substring 0..($home | str length) | str replace -s $home "~"),
+        ($env.PWD | str substring 0..($home | str length) | str replace $home "~"),
         ($env.PWD | str substring ($home | str length)..)
     ] | str join)
 
-    let path_segment = if (is-admin) {
-        $"(ansi red_bold)($dir)"
-    } else {
-        $"(ansi green_bold)($dir)"
-    }
+    let path_color = (if (is-admin) { ansi red_bold } else { ansi green_bold })
+    let separator_color = (if (is-admin) { ansi light_red_bold } else { ansi light_green_bold })
+    let path_segment = $"($path_color)($dir)"
 
-    $path_segment
+    $path_segment | str replace --all (char path_sep) $"($separator_color)/($path_color)"
 }
 
 def create_right_prompt [] {
+    # create a right prompt in magenta with green separators and am/pm underlined
     let time_segment = ([
         (ansi reset)
         (ansi magenta)
-        (date now | date format '%m/%d/%Y %r')
-    ] | str join)
+        (date now | format date '%Y/%m/%d %r')
+    ] | str join | str replace --regex --all "([/:])" $"(ansi green)${1}(ansi magenta)" |
+        str replace --regex --all "([AP]M)" $"(ansi magenta_underline)${1}")
 
     let last_exit_code = if ($env.LAST_EXIT_CODE != 0) {([
         (ansi rb)
@@ -88,5 +81,18 @@ $env.NU_PLUGIN_DIRS = [
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 # $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
 mkdir ~/.cache/starship
+
+# FNM
+if not (which fnm | is-empty) {
+  ^fnm env --json | from json | load-env
+  # Checking `Path` for Windows
+  let path = if 'Path' in $env { $env.Path } else { $env.PATH }
+  let node_path = if (sys).host.name == 'Windows' {
+    $"($env.FNM_MULTISHELL_PATH)"
+  } else {
+    $"($env.FNM_MULTISHELL_PATH)/bin"
+  }
+  $env.PATH = ($path | prepend [ $node_path ])
+}
 
 starship init nu | save -f ~/.cache/starship/init.nu

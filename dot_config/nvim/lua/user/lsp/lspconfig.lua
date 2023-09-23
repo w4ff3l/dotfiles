@@ -8,8 +8,9 @@ vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
 
 lspconfig['lua_ls'].setup({ settings = { Lua = { diagnostics = { globals = { 'vim' } } } } })
-
 lspconfig['kotlin_language_server'].setup({})
+lspconfig['html'].setup({})
+lspconfig['cssls'].setup({})
 
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('UserLspConfig', {}),

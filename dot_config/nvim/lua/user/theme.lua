@@ -1,8 +1,11 @@
-local colorscheme = 'gruvbox'
-local status_ok, _ = pcall(vim.cmd, 'colorscheme ' .. colorscheme)
+-- local status_require, gruvbox = pcall(require, 'gruvbox')
+-- if not status_require then
+--     print('Error loading gruvbox...')
+--     return
+-- end
+--
+-- gruvbox.setup({})
+
 vim.o.backgroud = 'dark'
 vim.o.gruvbox_contrast_dark = 'hard'
-if not status_ok then
-    print('Error loading Gruvbox colorscheme')
-    return
-end
+vim.cmd.colorscheme('gruvbox')

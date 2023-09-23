@@ -1,11 +1,15 @@
 local Plug = vim.fn['plug#']
 
 vim.call('plug#begin', '~/.config/nvim/plugged')
--- theme
+
+-- theme and ui
 Plug 'morhetz/gruvbox'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug('rrethy/vim-hexokinase', { ['do'] = vim.fn['make hexokinase'] })
+Plug 'MunifTanjim/nui.nvim' -- UI component library needed for other ui plugins
+Plug 'rcarriga/nvim-notify'
+Plug 'folke/noice.nvim'
 
 -- utility
 Plug 'nvim-lua/plenary.nvim' -- Common lua modules other plugins use
@@ -44,4 +48,5 @@ Plug 'hrsh7th/cmp-path'         -- path completion
 Plug 'hrsh7th/cmp-cmdline'      -- cmdline completion
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'saadparwaiz1/cmp_luasnip' -- snippet completion
+
 vim.call('plug#end')

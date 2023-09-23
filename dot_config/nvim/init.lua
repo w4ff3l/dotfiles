@@ -2,6 +2,8 @@ require 'user.options'
 require 'user.plugins'
 require 'user.keymaps'
 require 'user.theme'
+require 'user.notify'
+require 'user.noice'
 
 require 'user.hop'
 require 'user.cmp'

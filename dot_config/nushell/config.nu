@@ -125,7 +125,7 @@ $env.config = {
   float_precision: 2 # the precision for displaying floats in tables
   # buffer_editor: "emacs" # command that will be used to edit the current line buffer with ctrl+o, if unset fallback to $env.EDITOR and $env.VISUAL
   use_ansi_coloring: true
-  edit_mode: emacs # emacs, vi
+  edit_mode: vi # emacs, vi
   shell_integration: true # enables terminal markers and a workaround to arrow keys stop working issue
   render_right_prompt_on_last_line: false # true or false to enable or disable right prompt to be rendered on last line of the prompt.
 
@@ -137,8 +137,10 @@ $env.config = {
       null  # replace with source code to run before the repl input is run
     }]
     env_change: {
-      PWD: [{|before, after|
-        null  # replace with source code to run if the PWD environment is different since the last repl input
+      PWD: [{ |before, after|
+        if ('FNM_DIR' in $env) and ([.nvmrc .node-version] | path exists | any { |it| $it }) {
+          fnm use
+        }
       }]
     }
     display_output: {||
