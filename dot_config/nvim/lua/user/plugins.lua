@@ -8,8 +8,6 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug('rrethy/vim-hexokinase', { ['do'] = vim.fn['make hexokinase'] })
 Plug 'MunifTanjim/nui.nvim' -- UI component library needed for other ui plugins
-Plug 'rcarriga/nvim-notify'
-Plug 'folke/noice.nvim'
 
 -- utility
 Plug 'nvim-lua/plenary.nvim' -- Common lua modules other plugins use
@@ -17,6 +15,9 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'numToStr/Comment.nvim'
 Plug 'folke/which-key.nvim'
 -- Plug 'vimwiki/vimwiki' -- currently not needed
+
+-- Versioning
+Plug 'tpope/vim-fugitive'
 
 -- File Navigation
 Plug 'phaazon/hop.nvim'
@@ -26,7 +27,6 @@ Plug 'karb94/neoscroll.nvim'
 -- File Exploration
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-neo-tree/neo-tree.nvim'
-Plug 'MunifTanjim/nui.nvim' -- Needed for neo-tree
 
 -- lsp
 Plug('williamboman/mason.nvim', { ['do'] = vim.fn[':MasonUpdate'] }) -- simple to use language server installer
