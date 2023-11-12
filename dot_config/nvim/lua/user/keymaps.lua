@@ -22,8 +22,12 @@ set("n", "<C-k>", "<C-w>k", opts)
 set("n", "<C-l>", "<C-w>l", opts)
 
 -- File exploration
-set("n", "<leader>t", ":Neotree toggle<CR>", opts)
+set("n", "<leader>t", ":Neotree toggle position=current<CR>", opts)
 set("n", "<leader><leader>f", rtelescope.find_files, opts)
+set('n', '<leader><leader>g', rtelescope.live_grep, opts)
+set('n', '<leader><leader>r', "<Cmd>Telescope frecency<CR>", opts)
+set('n', '<leader><leader>b', rtelescope.buffers, opts)
+set('n', '<leader><leader>h', rtelescope.help_tags, opts)
 
 -- File navigation/editing
 set("n", "<leader>s", "<Plug>Sneak_s", opts)

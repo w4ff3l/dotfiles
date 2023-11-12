@@ -57,16 +57,16 @@ neo_tree.setup({
         git_status = {
             symbols = {
                 -- Change type
-                added     = '', -- or '✚', but this is redundant info if you use git_status_colors on the name
-                modified  = '', -- or '', but this is redundant info if you use git_status_colors on the name
-                deleted   = '✖', -- this can only be used in the git_status source
-                renamed   = '', -- this can only be used in the git_status source
+                added     = "", -- or "✚", but this is redundant info if you use git_status_colors on the name
+                modified  = "", -- or "", but this is redundant info if you use git_status_colors on the name
+                deleted   = "✖", -- this can only be used in the git_status source
+                renamed   = "󰁕", -- this can only be used in the git_status source
                 -- Status type
-                untracked = '',
-                ignored   = '',
-                unstaged  = '',
-                staged    = '',
-                conflict  = '',
+                untracked = "",
+                ignored   = "",
+                unstaged  = "󰄱",
+                staged    = "",
+                conflict  = "",
             }
         },
     },
@@ -159,9 +159,9 @@ neo_tree.setup({
             },
         },
         follow_current_file = {
-            enabled = false,         -- This will find and focus the file in the active buffer every time
+            enabled = false,                    -- This will find and focus the file in the active buffer every time
             -- the current file is changed while the tree is open.
-            leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
+            leave_dirs_open = false,            -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
         },
         group_empty_dirs = true,                -- when true, empty folders will be grouped together
         hijack_netrw_behavior = 'open_default', -- netrw disabled, opening a directory opens neo-tree
