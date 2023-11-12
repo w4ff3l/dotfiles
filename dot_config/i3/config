@@ -11,6 +11,7 @@ set $mod Mod4
 set $modh Mod3
 
 include monitor.conf
+include window.conf
 include general.conf
 include kb-mouse.conf
 include i3-binding.conf
