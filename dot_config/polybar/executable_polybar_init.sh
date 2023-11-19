@@ -15,4 +15,3 @@ if type "xrandr"; then
 else
   polybar -q main -c "$DIR"/config.ini &
 fi
-#polybar -q main -c "$DIR"/config.ini &

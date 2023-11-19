@@ -35,6 +35,9 @@ configs.setup {
             },
         },
     },
+    autotag = {
+        enable = true,
+    },
 }
 
 local parser_config = parsers.get_parser_configs()

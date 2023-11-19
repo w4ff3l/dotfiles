@@ -8,11 +8,6 @@ if not snip_status_ok then
     return
 end
 
-local check_backspace = function()
-    local col = vim.fn.col '.' - 1
-    return col == 0 or vim.fn.getline('.'):sub(col, col):match '%s'
-end
-
 local kind_icons = {
     Text = "󰉿",
     Method = "󰆧",
@@ -42,26 +37,30 @@ local kind_icons = {
 }
 
 cmp.setup {
+    preselect = cmp.PreselectMode.None,
     snippet = {
         expand = function(args)
             luasnip.lsp_expand(args.body) -- For `luasnip` users.
         end,
     },
     window = {
-        documentation = cmp.config.window.bordered(),
         completion = cmp.config.window.bordered(),
+        documentation = cmp.config.disable,
     },
     mapping = {
         ['<C-k>'] = cmp.mapping.select_prev_item(),
         ['<C-j>'] = cmp.mapping.select_next_item(),
         ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-1), { 'i', 'c' }),
         ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(1), { 'i', 'c' }),
-        ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
         ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
         ['<C-e>'] = cmp.mapping.abort(),
         -- Accept currently selected item. If none selected, `select` first item.
         -- Set `select` to `false` to only confirm explicitly selected items.
-        ['<CR>'] = cmp.mapping.confirm { select = true },
+        ['<CR>'] = cmp.mapping.confirm {
+            behavior = cmp.ConfirmBehavior.Replace,
+            select = true,
+        },
+        ['<C-Space>'] = cmp.mapping.complete(),
     },
     formatting = {
         fields = { 'kind', 'abbr', 'menu' },
@@ -85,7 +84,7 @@ cmp.setup {
         { name = 'path' },
     },
     confirm_opts = {
-        behavior = cmp.ConfirmBehavior.Replace,
+        behavior = cmp.ConfirmBehavior.Insert,
         select = false,
     },
     experimental = {
@@ -93,4 +92,3 @@ cmp.setup {
         native_menu = false,
     },
 }
-

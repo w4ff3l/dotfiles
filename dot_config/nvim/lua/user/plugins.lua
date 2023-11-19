@@ -14,7 +14,6 @@ Plug 'nvim-lua/plenary.nvim' -- Common lua modules other plugins use
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'numToStr/Comment.nvim'
 Plug 'folke/which-key.nvim'
--- Plug 'vimwiki/vimwiki' -- currently not needed
 
 -- Versioning
 Plug 'tpope/vim-fugitive'
@@ -22,6 +21,7 @@ Plug 'tpope/vim-fugitive'
 -- File Manipulation
 Plug 'kylechui/nvim-surround'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+Plug 'windwp/nvim-ts-autotag'
 
 -- File Navigation
 Plug 'phaazon/hop.nvim'
@@ -54,12 +54,12 @@ Plug 'hrsh7th/cmp-cmdline'      -- cmdline completion
 Plug 'hrsh7th/cmp-nvim-lsp'
 
 -- snippets
-Plug('L3MON4D3/LuaSnip', { tag = 'v2.0.0', ['do'] = 'make install_jsregexp' })
+Plug('L3MON4D3/LuaSnip', { tag = 'v2.1.0', ['do'] = 'make install_jsregexp' })
 Plug 'saadparwaiz1/cmp_luasnip' -- snippet completion
 Plug 'rafamadriz/friendly-snippets'
 
 -- languages
 Plug 'saecki/crates.nvim'
-Plug('mrcjkb/rustaceanvim', { tag = '3.3.0', ['for'] = 'rust' })
+Plug('mrcjkb/rustaceanvim', { tag = '3.6.0', ['for'] = 'rust' })
 
 vim.call('plug#end')
