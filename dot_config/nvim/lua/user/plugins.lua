@@ -27,7 +27,7 @@ Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'windwp/nvim-ts-autotag'
 
 -- File Navigation
-Plug 'phaazon/hop.nvim'
+Plug 'smoka7/hop.nvim'
 Plug 'justinmk/vim-sneak'
 Plug 'karb94/neoscroll.nvim'
 
