@@ -8,6 +8,7 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug('rrethy/vim-hexokinase', { ['do'] = vim.fn['make hexokinase'] })
 Plug 'MunifTanjim/nui.nvim' -- UI component library needed for other ui plugins
+Plug 'nvimdev/lspsaga.nvim'
 
 -- utility
 Plug 'nvim-lua/plenary.nvim' -- Common lua modules other plugins use

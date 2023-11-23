@@ -35,5 +35,12 @@ set("n", "<leader>S", "<Plug>Sneak_S", opts)
 set("n", "<leader>w", rhop.hint_words, opts)
 set("n", "<leader>cc", ":call nerdcommenter#Comment('n', 'Toggle')<cr>", opts)
 
+-- LSP
+        -- vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+vim.keymap.set('n', '<space>ca', '<cmd>Lspsaga code_action<CR>')
+vim.keymap.set('n', '<space>rn', '<cmd>Lspsaga rename<CR>')
+vim.keymap.set('n', 'K', '<cmd>Lspsaga hover_doc<CR>')
+vim.keymap.set('n', '<space>e', '<cmd>Lspsaga diagnostic_jump_next<CR>')
+
 set_alias("Format", "lua vim.lsp.buf.format()")
 set("n", "<leader>cf", ":Format<CR>", {})
