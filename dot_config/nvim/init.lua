@@ -5,6 +5,7 @@ require 'user.theme'
 
 require 'user.hop'
 require 'user.cmp'
+require 'user.autopairs'
 require 'user.lualine'
 require 'user.luasnip'
 require 'user.neoscroll'

@@ -8,6 +8,11 @@ if not snip_status_ok then
     return
 end
 
+local autopairs_status_ok, cmp_autopairs = pcall(require, 'nvim-autopairs.completion.cmp')
+if not autopairs_status_ok then
+    return
+end
+
 local kind_icons = {
     Text = "󰉿",
     Method = "󰆧",
@@ -36,6 +41,11 @@ local kind_icons = {
     TypeParameter = "",
 }
 
+cmp.event:on(
+  'confirm_done',
+  cmp_autopairs.on_confirm_done()
+)
+
 cmp.setup {
     preselect = cmp.PreselectMode.None,
     snippet = {
@@ -57,7 +67,7 @@ cmp.setup {
         -- Accept currently selected item. If none selected, `select` first item.
         -- Set `select` to `false` to only confirm explicitly selected items.
         ['<CR>'] = cmp.mapping.confirm {
-            behavior = cmp.ConfirmBehavior.Replace,
+            behavior = cmp.ConfirmBehavior.Insert,
             select = true,
         },
         ['<C-Space>'] = cmp.mapping.complete(),

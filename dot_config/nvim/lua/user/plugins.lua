@@ -20,6 +20,7 @@ Plug 'tpope/vim-fugitive'
 
 -- File Manipulation
 Plug 'kylechui/nvim-surround'
+Plug 'windwp/nvim-autopairs'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'windwp/nvim-ts-autotag'
 
