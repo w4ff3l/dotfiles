@@ -15,6 +15,7 @@ require 'user.which-key'
 require 'user.neo-tree'
 require 'user.gitsigns'
 require 'user.surround'
+require 'user.indent'
 
 require 'user.comment'
 require 'user.lsp'
