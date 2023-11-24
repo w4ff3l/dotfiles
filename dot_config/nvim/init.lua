@@ -3,6 +3,7 @@ require 'user.plugins'
 require 'user.keymaps'
 require 'user.theme'
 
+require 'user.alpha'
 require 'user.hop'
 require 'user.cmp'
 require 'user.autopairs'
