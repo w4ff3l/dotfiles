@@ -19,13 +19,14 @@ require("gruvbox").setup({
     contrast = "",  -- can be "hard", "soft" or empty string
     palette_overrides = {},
     overrides = {
-        ["@lsp.type.namespace.java"] = { fg = "#fabd2f" },
+        ["@type.builtin.var"] = { fg = "#fb4934" },
         ["@include.java"] = { fg = "#fb4934" },
         ["@variable.builtin.java"] = { fg = "#fb4934" },
         ["@variable.java"] = { fg = "#83a598" },
-        ["@lsp.type.variable.java"] = { fg = "#83a598" },
         ["@type.qualifier.java"] = { fg = "#fb4934" },
+        ["@lsp.type.namespace.java"] = { fg = "#fabd2f" },
         ["@lsp.type.modifier.java"] = { fg = "#fb4934" },
+        ["@lsp.type.variable.java"] = { fg = "#83a598" },
     },
     dim_inactive = false,
     transparent_mode = false,
