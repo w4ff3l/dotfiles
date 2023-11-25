@@ -44,6 +44,7 @@ Plug 'lewis6991/gitsigns.nvim'
 Plug('williamboman/mason.nvim', { ['do'] = vim.fn[':MasonUpdate'] }) -- simple to use language server installer
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'neovim/nvim-lspconfig'                                         -- enable LSP
+Plug 'linrongbin16/lsp-progress.nvim'
 Plug 'nvimtools/none-ls.nvim'
 Plug 'mfussenegger/nvim-jdtls'
 

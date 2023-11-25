@@ -4,3 +4,4 @@ if not status_ok then
     return
 end
 
+none_ls.setup {}
