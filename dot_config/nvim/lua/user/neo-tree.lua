@@ -1,5 +1,6 @@
 local status_ok, neo_tree = pcall(require, 'neo-tree')
 if not status_ok then
+    print('Error loading neo-tree...')
     return
 end
 

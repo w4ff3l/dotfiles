@@ -44,17 +44,17 @@ Plug 'lewis6991/gitsigns.nvim'
 Plug('williamboman/mason.nvim', { ['do'] = vim.fn[':MasonUpdate'] }) -- simple to use language server installer
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'neovim/nvim-lspconfig'                                         -- enable LSP
-Plug 'jose-elias-alvarez/null-ls.nvim'                               -- formatters and linters
+Plug 'nvimtools/none-ls.nvim'
 Plug 'mfussenegger/nvim-jdtls'
 
 -- Syntax
 Plug('nvim-treesitter/nvim-treesitter', { ['do'] = vim.fn[':TSUpdate'] })
 
 -- cmp plugins
-Plug 'hrsh7th/nvim-cmp'         -- The completion plugin
-Plug 'hrsh7th/cmp-buffer'       -- buffer completion
-Plug 'hrsh7th/cmp-path'         -- path completion
-Plug 'hrsh7th/cmp-cmdline'      -- cmdline completion
+Plug 'hrsh7th/nvim-cmp'    -- The completion plugin
+Plug 'hrsh7th/cmp-buffer'  -- buffer completion
+Plug 'hrsh7th/cmp-path'    -- path completion
+Plug 'hrsh7th/cmp-cmdline' -- cmdline completion
 Plug 'hrsh7th/cmp-nvim-lsp'
 
 -- snippets

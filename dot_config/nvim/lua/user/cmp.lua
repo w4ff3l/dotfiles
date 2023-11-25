@@ -1,15 +1,24 @@
 local cmp_status_ok, cmp = pcall(require, 'cmp')
 if not cmp_status_ok then
+    print('Error loading cmp...')
     return
 end
 
-local snip_status_ok, luasnip = pcall(require, 'luasnip')
-if not snip_status_ok then
+local luasnip_status_ok, luasnip = pcall(require, 'luasnip')
+if not luasnip_status_ok then
+    print('Error loading snip...')
+    return
+end
+
+local luasnip_vscode_status_ok, luasnip_vscode = pcall(require, 'luasnip.loaders.from_vscode')
+if not luasnip_vscode_status_ok then
+    print('Error loading luasnip...')
     return
 end
 
 local autopairs_status_ok, cmp_autopairs = pcall(require, 'nvim-autopairs.completion.cmp')
 if not autopairs_status_ok then
+    print('Error loading autopairs...')
     return
 end
 
@@ -40,6 +49,8 @@ local kind_icons = {
     Operator = "󰆕",
     TypeParameter = "",
 }
+
+luasnip_vscode.lazy_load()
 
 cmp.event:on(
   'confirm_done',

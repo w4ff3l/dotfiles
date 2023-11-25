@@ -1,11 +1,11 @@
-local status_ok, mason = pcall(require, 'mason')
-if not status_ok then
-    print('Error loading mason')
+local mason_status_ok, mason = pcall(require, 'mason')
+if not mason_status_ok then
+    print('Error loading mason...')
     return
 end
 
-local status_ok, mason_lspconfig = pcall(require, 'mason-lspconfig')
-if not status_ok then
+local mason_lspconfig_status_ok, mason_lspconfig = pcall(require, 'mason-lspconfig')
+if not mason_lspconfig_status_ok then
     print('Error loading mason')
     return
 end

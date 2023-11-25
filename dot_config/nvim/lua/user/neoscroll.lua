@@ -1,10 +1,12 @@
-local status_ok, neoscroll = pcall(require, 'neoscroll')
-if not status_ok then
+local neoscroll_status_ok, neoscroll = pcall(require, 'neoscroll')
+if not neoscroll_status_ok then
+    print('Error loading neoscroll...')
     return
 end
 
-local status_config, neoscroll_config = pcall(require, 'neoscroll.config')
-if not status_config then
+local neoscroll_config_status_config, neoscroll_config = pcall(require, 'neoscroll.config')
+if not neoscroll_config_status_config then
+    print('Error loading neoscroll config...')
     return
 end
 

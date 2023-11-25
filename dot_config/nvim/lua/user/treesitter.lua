@@ -1,9 +1,12 @@
-local status_ok_c, configs = pcall(require, 'nvim-treesitter.configs')
-local status_ok_p, parsers = pcall(require, 'nvim-treesitter.parsers')
-if not status_ok_c then
+local treesitter_config_status_ok, configs = pcall(require, 'nvim-treesitter.configs')
+if not treesitter_config_status_ok then
+    print('Error loading treesitter configs...')
     return
 end
-if not status_ok_p then
+
+local treesitter_parsers_status_ok, parsers = pcall(require, 'nvim-treesitter.parsers')
+if not treesitter_parsers_status_ok then
+    print('Error loading treesitter parsers...')
     return
 end
 
@@ -41,6 +44,7 @@ configs.setup {
 }
 
 local parser_config = parsers.get_parser_configs()
+
 parser_config.nu = {
     install_info = {
         url = 'https://github.com/nushell/tree-sitter-nu',
@@ -49,3 +53,4 @@ parser_config.nu = {
     },
     filetype = 'nu',
 }
+
