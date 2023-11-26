@@ -16,6 +16,7 @@ require 'user.neo-tree'
 require 'user.gitsigns'
 require 'user.surround'
 require 'user.indent'
+require 'user.fidget'
 
 require 'user.comment'
 require 'user.lsp'

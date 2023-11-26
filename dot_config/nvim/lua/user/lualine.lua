@@ -1,12 +1,6 @@
-local lualine_status_ok, lualine = pcall(require, 'lualine')
-if not lualine_status_ok then
+local status_ok, lualine = pcall(require, 'lualine')
+if not status_ok then
     print('Error loading lualine...')
-    return
-end
-
-local progress_status_ok, lsp_progress = pcall(require, 'lsp-progress')
-if not progress_status_ok then
-    print('Error loading lsp-progress...')
     return
 end
 
@@ -23,7 +17,7 @@ lualine.setup({
     sections = {
         lualine_a = { 'mode' },
         lualine_b = { 'branch', 'diff', 'diagnostics' },
-        lualine_c = { 'filename', lsp_progress.progress, },
+        lualine_c = { 'filename' },
         lualine_x = { 'encoding', 'fileformat', 'filetype' },
         lualine_y = { 'progress' },
         lualine_z = { 'location' }
@@ -41,8 +35,3 @@ lualine.setup({
 })
 
 vim.api.nvim_create_augroup("lualine_augroup", { clear = true })
-vim.api.nvim_create_autocmd("User", {
-    group = "lualine_augroup",
-    pattern = "LspProgressStatusUpdated",
-    callback = require("lualine").refresh,
-})
