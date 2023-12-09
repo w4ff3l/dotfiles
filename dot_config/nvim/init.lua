@@ -17,6 +17,7 @@ require 'user.gitsigns'
 require 'user.surround'
 require 'user.indent'
 require 'user.fidget'
+require 'user.neotest'
 
 require 'user.comment'
 require 'user.lsp'

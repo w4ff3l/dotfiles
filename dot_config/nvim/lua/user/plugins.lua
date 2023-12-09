@@ -11,7 +11,7 @@ Plug 'MunifTanjim/nui.nvim' -- UI component library needed for other ui plugins
 Plug 'nvimdev/lspsaga.nvim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'goolord/alpha-nvim'
-Plug 'j-hui/fidget.nvim'
+-- Plug 'j-hui/fidget.nvim'
 
 -- utility
 Plug 'nvim-lua/plenary.nvim' -- Common lua modules other plugins use
@@ -19,6 +19,13 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'numToStr/Comment.nvim'
 Plug 'folke/which-key.nvim'
 Plug 'folke/trouble.nvim'
+Plug 'antoinemadec/FixCursorHold.nvim'
+
+Plug 'nvim-neotest/neotest'
+-- Plug 'rcasia/neotest-java'
+Plug '~/workspace/neotest-java'
+Plug 'rouge8/neotest-rust'
+Plug 'nvim-neotest/neotest-plenary'
 
 -- Versioning
 Plug 'tpope/vim-fugitive'
@@ -49,6 +56,10 @@ Plug 'neovim/nvim-lspconfig'                                         -- enable L
 Plug 'nvimtools/none-ls.nvim'
 Plug 'mfussenegger/nvim-jdtls'
 
+-- languages
+Plug 'saecki/crates.nvim'
+Plug('mrcjkb/rustaceanvim', { tag = '3.9.5', ['for'] = 'rust' })
+
 -- Syntax
 Plug('nvim-treesitter/nvim-treesitter', { ['do'] = vim.fn[':TSUpdate'] })
 
@@ -63,9 +74,5 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug('L3MON4D3/LuaSnip', { tag = 'v2.1.0', ['do'] = 'make install_jsregexp' })
 Plug 'saadparwaiz1/cmp_luasnip' -- snippet completion
 Plug 'rafamadriz/friendly-snippets'
-
--- languages
-Plug 'saecki/crates.nvim'
-Plug('mrcjkb/rustaceanvim', { tag = '3.6.0', ['for'] = 'rust' })
 
 vim.call('plug#end')
