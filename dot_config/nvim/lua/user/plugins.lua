@@ -11,7 +11,6 @@ Plug 'MunifTanjim/nui.nvim' -- UI component library needed for other ui plugins
 Plug 'nvimdev/lspsaga.nvim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'goolord/alpha-nvim'
--- Plug 'j-hui/fidget.nvim'
 
 -- utility
 Plug 'nvim-lua/plenary.nvim' -- Common lua modules other plugins use
