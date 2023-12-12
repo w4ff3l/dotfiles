@@ -15,7 +15,6 @@ zmodload zsh/complist
 export NVM_COMPLETION=true
 export NVM_LAZY_LOAD=true
 
-echo "plugins"
 plugins=(
     ssh-agent
     git
