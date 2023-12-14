@@ -33,6 +33,9 @@ plugins=(
     fancy-ctrl-z
 )
 
+zstyle :omz:plugins:ssh-agent quiet yes
+zstyle :omz:plugins:ssh-agent lazy yes
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
