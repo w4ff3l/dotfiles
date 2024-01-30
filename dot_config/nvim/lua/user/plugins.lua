@@ -58,6 +58,7 @@ Plug 'mfussenegger/nvim-jdtls'
 -- languages
 Plug 'saecki/crates.nvim'
 Plug('mrcjkb/rustaceanvim', { tag = '3.9.5', ['for'] = 'rust' })
+Plug('epwalsh/obsidian.nvim', { tag = '*' })
 
 -- Syntax
 Plug('nvim-treesitter/nvim-treesitter', { ['do'] = vim.fn[':TSUpdate'] })
