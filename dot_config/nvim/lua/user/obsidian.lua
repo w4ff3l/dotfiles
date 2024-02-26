@@ -10,10 +10,10 @@ obsidian.setup({
             name = "personal",
             path = "~/vaults/personal",
         },
-        {
-            name = "work",
-            path = "~/vaults/work",
-        },
+--        {
+--            name = "work",
+--            path = "~/vaults/work",
+--        },
     },
 })
 

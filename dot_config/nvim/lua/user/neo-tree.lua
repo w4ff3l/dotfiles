@@ -40,7 +40,7 @@ neo_tree.setup({
         icon = {
             folder_closed = '',
             folder_open = '',
-            folder_empty = 'ﰊ',
+            folder_empty = '󰜌',
             -- The next two settings are only a fallback, if you use nvim-web-devicons and configure default icons there
             -- then these will never be used.
             default = '*',
@@ -144,9 +144,10 @@ neo_tree.setup({
         follow_current_file = {
             enabled = false,                    -- This will find and focus the file in the active buffer every time
             -- the current file is changed while the tree is open.
-            leave_dirs_open = false,            -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
+            leave_dirs_open = true,             -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
         },
         group_empty_dirs = true,                -- when true, empty folders will be grouped together
+        scan_mode = "deep",
         hijack_netrw_behavior = 'open_default', -- netrw disabled, opening a directory opens neo-tree
         -- in whatever position is specified in window.position
         -- 'open_current',  -- netrw disabled, opening a directory opens within the
