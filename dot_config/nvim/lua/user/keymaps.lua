@@ -36,7 +36,7 @@ set("n", "<leader>w", rhop.hint_words, opts)
 set("n", "<leader>cc", ":call nerdcommenter#Comment('n', 'Toggle')<cr>", opts)
 
 -- LSP
-        -- vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+-- vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
 vim.keymap.set('n', '<space>ca', '<cmd>Lspsaga code_action<CR>')
 vim.keymap.set('n', '<space>rn', '<cmd>Lspsaga rename<CR>')
 vim.keymap.set('n', 'K', '<cmd>Lspsaga hover_doc<CR>')
