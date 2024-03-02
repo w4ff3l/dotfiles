@@ -18,6 +18,7 @@ require 'user.surround'
 require 'user.indent'
 require 'user.neotest'
 require 'user.obsidian'
+require 'user.kitty-scrollback'
 
 require 'user.comment'
 require 'user.lsp'

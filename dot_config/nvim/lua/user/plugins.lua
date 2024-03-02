@@ -21,10 +21,12 @@ Plug 'folke/trouble.nvim'
 Plug 'antoinemadec/FixCursorHold.nvim'
 
 Plug 'nvim-neotest/neotest'
--- Plug 'rcasia/neotest-java'
-Plug '~/workspace/neotest-java'
+Plug 'rcasia/neotest-java'
+-- Plug '~/workspace/neotest-java'
 Plug 'rouge8/neotest-rust'
 Plug 'nvim-neotest/neotest-plenary'
+
+Plug 'mikesmithgh/kitty-scrollback.nvim'
 
 -- Versioning
 Plug 'tpope/vim-fugitive'
