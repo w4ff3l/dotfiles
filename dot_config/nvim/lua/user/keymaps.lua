@@ -22,7 +22,8 @@ set("n", "<C-k>", "<C-w>k", opts)
 set("n", "<C-l>", "<C-w>l", opts)
 
 -- File exploration
-set("n", "<leader>t", ":Neotree toggle reveal position=current<CR>", opts)
+set("n", "<leader>t", ":Neotree float toggle reveal<CR>", opts)
+set("n", "<leader><leader>t", ":Neotree float toggle reveal position=current<CR>", opts)
 set("n", "<leader><leader>f", rtelescope.find_files, opts)
 set('n', '<leader><leader>g', rtelescope.live_grep, opts)
 set('n', '<leader><leader>r', "<Cmd>Telescope frecency workspace=CWD<CR>", opts)
