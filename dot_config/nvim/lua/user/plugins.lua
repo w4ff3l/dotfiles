@@ -19,14 +19,16 @@ Plug 'numToStr/Comment.nvim'
 Plug 'folke/which-key.nvim'
 Plug 'folke/trouble.nvim'
 Plug 'antoinemadec/FixCursorHold.nvim'
+Plug 'mikesmithgh/kitty-scrollback.nvim'
+Plug 'nvim-neotest/nvim-nio'
 
+-- tests
 Plug 'nvim-neotest/neotest'
--- Plug 'rcasia/neotest-java'
-Plug '~/workspace/neotest-java'
+Plug 'rcasia/neotest-java'
+-- Plug '~/workspace/neotest-java'
 Plug 'rouge8/neotest-rust'
 Plug 'nvim-neotest/neotest-plenary'
 
-Plug 'mikesmithgh/kitty-scrollback.nvim'
 
 -- Versioning
 Plug 'tpope/vim-fugitive'
@@ -43,8 +45,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'karb94/neoscroll.nvim'
 
 -- File Exploration
-Plug('nvim-telescope/telescope.nvim', { tag = '0.1.4' })
-Plug 'nvim-telescope/telescope-frecency.nvim'
+Plug('nvim-telescope/telescope.nvim', { tag = '0.1.6' })
 Plug 'nvim-neo-tree/neo-tree.nvim'
 
 -- Git

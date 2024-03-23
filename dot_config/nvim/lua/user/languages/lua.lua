@@ -4,4 +4,19 @@ if not status_ok then
     return
 end
 
-lspconfig['lua_ls'].setup({ settings = { Lua = { diagnostics = { globals = { 'vim' } } } } })
+local config = {
+    settings = {
+        Lua = {
+            workspace = {
+                library = {
+                    "./deps"
+                }
+            },
+            diagnostics = {
+                globals = { 'vim' }
+            }
+        }
+    }
+}
+
+lspconfig['lua_ls'].setup(config)
