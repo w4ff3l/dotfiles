@@ -21,8 +21,8 @@ Plug 'folke/trouble.nvim'
 Plug 'antoinemadec/FixCursorHold.nvim'
 
 Plug 'nvim-neotest/neotest'
-Plug 'rcasia/neotest-java'
--- Plug '~/workspace/neotest-java'
+-- Plug 'rcasia/neotest-java'
+Plug '~/workspace/neotest-java'
 Plug 'rouge8/neotest-rust'
 Plug 'nvim-neotest/neotest-plenary'
 
@@ -63,7 +63,7 @@ Plug('mrcjkb/rustaceanvim', { tag = '3.9.5', ['for'] = 'rust' })
 Plug('epwalsh/obsidian.nvim', { tag = '*' })
 
 -- Syntax
-Plug('nvim-treesitter/nvim-treesitter', { ['do'] = vim.fn[':TSUpdate'] })
+Plug 'nvim-treesitter/nvim-treesitter'
 
 -- cmp plugins
 Plug 'hrsh7th/nvim-cmp'    -- The completion plugin

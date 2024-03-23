@@ -5,15 +5,13 @@ if not status_ok then
 end
 
 configs.setup {
-    ensure_installed = 'all', -- one of 'all', 'maintained' (parsers with maintainers), or a list of languages
-    sync_install = false,     -- install languages synchronously (only applied to `ensure_installed`)
+    ensure_installed = { 'java', 'kotlin', 'rust', 'xml', 'html', 'json', },
+    sync_install = true,
+    auto_install = true,
     highlight = {
-        enable = true,    -- false will disable the whole extension
-        disable = { '' }, -- list of language that will be disabled
+        enable = true,
+        disable = { '' },
         additional_vim_regex_highlighting = true,
-        custom_captures = {
-            ["type"] = "keyword",
-        },
     },
     autopairs = { enable = true, },
     indent = { enable = true, disable = { 'yaml' }, },
@@ -36,4 +34,3 @@ configs.setup {
         enable = true,
     },
 }
-
