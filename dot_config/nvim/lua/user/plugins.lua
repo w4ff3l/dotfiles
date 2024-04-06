@@ -21,6 +21,7 @@ Plug 'folke/trouble.nvim'
 Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'mikesmithgh/kitty-scrollback.nvim'
 Plug 'nvim-neotest/nvim-nio'
+Plug('iamcco/markdown-preview.nvim', { ['do'] = vim.fn['cd app && npx --yes yarn install'] })
 
 -- tests
 Plug 'nvim-neotest/neotest'
