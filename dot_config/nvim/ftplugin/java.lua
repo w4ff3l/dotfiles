@@ -9,6 +9,9 @@ local root_dir = require('jdtls.setup').find_root(root_markers)
 
 local home = os.getenv('HOME')
 local workspace_folder = home .. "/.local/share/eclipse/" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
+local lombok_folder = home .. "/.local/share/nvim/mason/packages/jdtls/lombok.jar"
+local jar = vim.fn.glob(home .. "/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar")
+local configuration = home .. "/.local/share/nvim/mason/packages/jdtls/config_linux"
 
 local config = {
     completion = {
@@ -38,30 +41,41 @@ local config = {
         '-Dlog.protocol=true',
         '-Dlog.level=ALL',
         '-Xmx1g',
+        '-javaagent:' .. lombok_folder,
+        -- '-Xbootclasspath/a:' .. lombok_folder,
         '--add-modules=ALL-SYSTEM',
-        '--add-opens', 'java.base/java.util=ALL-UNNAMED',
-        '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
-        '-javaagent:/home/w4ff3l/.local/share/nvim/mason/packages/jdtls/lombok.jar',
+        '--add-opens',
+        'java.base/java.util=ALL-UNNAMED',
+        '--add-opens',
+        'java.base/java.lang=ALL-UNNAMED',
 
         -- The jar file is located where jdtls was installed. This will need to be updated
         -- to the location where you installed jdtls
-        '-jar', vim.fn.glob(
-        '/home/w4ff3l/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar'),
-        '-configuration', '/home/w4ff3l/.local/share/nvim/mason/packages/jdtls/config_linux',
+        '-jar',
+        jar,
+        '-configuration',
+        configuration,
 
-        '-data', workspace_folder,
+        '-data',
+        workspace_folder,
     },
-
-    root_dir = root_dir,
-    -- root_dir = vim.fs.dirname(vim.fs.find({ 'gradlew', '.git', 'mvnw' }, { upward = true })[1]),
 
     -- Here you can configure eclipse.jdt.ls specific settings
     -- See https://github.com/eclipse/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request
     -- for a list of options
     settings = {
         java = {
+            eclipse = {
+                downloadSources = true,
+                downloadJavadoc = true,
+            },
+            maven = {
+                downloadSources = true,
+                downloadJavadoc = true,
+            },
         }
     },
 }
 
+        -- vim.keymap.set('n', '<space>oi', "<Cmd>lua require'jdtls'.organize_imports()<CR>")
 jdtls.start_or_attach(config)
