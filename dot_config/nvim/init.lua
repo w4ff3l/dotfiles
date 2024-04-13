@@ -19,6 +19,7 @@ require 'user.indent'
 require 'user.neotest'
 require 'user.obsidian'
 require 'user.kitty-scrollback'
+require 'user.markdown-preview'
 
 require 'user.comment'
 require 'user.lsp'
