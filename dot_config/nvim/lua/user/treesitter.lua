@@ -10,7 +10,7 @@ configs.setup {
     auto_install = true,
     highlight = {
         enable = true,
-        disable = { '' },
+        disable = { 'latex' },
         additional_vim_regex_highlighting = true,
     },
     autopairs = { enable = true, },
