@@ -23,3 +23,4 @@ neotest.setup {
         adapter_rust,
     }
 }
+

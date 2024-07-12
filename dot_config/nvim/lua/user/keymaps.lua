@@ -42,6 +42,9 @@ vim.keymap.set('n', '<space>ca', '<cmd>Lspsaga code_action<CR>')
 vim.keymap.set('n', '<space>rn', '<cmd>Lspsaga rename<CR>')
 vim.keymap.set('n', 'K', '<cmd>Lspsaga hover_doc<CR>')
 vim.keymap.set('n', '<space>e', '<cmd>Lspsaga diagnostic_jump_next<CR>')
+-- Test bindings
+vim.keymap.set('n', 'rt', '<cmd>Neotest run<CR>')
+vim.keymap.set('n', '<space>ot', '<cmd>Neotest summary<CR>')
 
 set_alias("Format", "lua vim.lsp.buf.format()")
 set("n", "<leader>cf", ":Format<CR>", {})
