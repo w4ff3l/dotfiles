@@ -20,6 +20,7 @@ require 'user.neotest'
 require 'user.obsidian'
 require 'user.kitty-scrollback'
 require 'user.markdown-preview'
+require 'user.vimtex'
 
 require 'user.comment'
 require 'user.lsp'

@@ -58,6 +58,7 @@ Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'neovim/nvim-lspconfig'                                         -- enable LSP
 Plug 'nvimtools/none-ls.nvim'
 Plug 'mfussenegger/nvim-jdtls'
+Plug 'lervag/vimtex'
 
 -- languages
 Plug 'saecki/crates.nvim'
