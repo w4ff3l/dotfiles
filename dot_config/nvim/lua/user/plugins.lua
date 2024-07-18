@@ -13,6 +13,7 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'goolord/alpha-nvim'
 
 -- utility
+Plug 'rmagatti/auto-session'
 Plug 'nvim-lua/plenary.nvim' -- Common lua modules other plugins use
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'numToStr/Comment.nvim'
