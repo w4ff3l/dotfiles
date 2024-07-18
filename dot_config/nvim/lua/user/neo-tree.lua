@@ -70,6 +70,9 @@ neo_tree.setup({
                 conflict  = "",
             }
         },
+        mappings = {
+
+        },
     },
     -- A list of functions, each representing a global custom command
     -- that will be available in all sources (if not overridden in `opts[source_name].commands`)
@@ -89,7 +92,6 @@ neo_tree.setup({
             },
             ['<2-LeftMouse>'] = 'open',
             ['<cr>'] = 'open',
-            ['<esc>'] = 'revert_preview',
             ['P'] = { 'toggle_preview', config = { use_float = true } },
             ['l'] = 'focus_preview',
             ['S'] = 'open_split',
@@ -127,7 +129,7 @@ neo_tree.setup({
             --  }
             --}
             ['m'] = 'move', -- takes text input for destination, also accepts the optional config.show_path option like 'add'.
-            ['q'] = 'close_window',
+            ['<esc>'] = 'close_window',
             ['R'] = 'refresh',
             ['?'] = 'show_help',
             ['<'] = 'prev_source',
