@@ -30,5 +30,15 @@ telescope.setup({
             preview_width = 0.5,
         },
     },
+    pickers = {
+        buffers = {
+            sort_mru = true,
+            layout_strategy = 'horizontal',
+            layout_config = {
+                horizontal = { width = 0.95, height = 0.95 },
+                preview_width = 0.5,
+            },
+        }
+    }
 })
 
