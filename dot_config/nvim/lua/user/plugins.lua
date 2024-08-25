@@ -11,6 +11,8 @@ Plug 'MunifTanjim/nui.nvim' -- UI component library needed for other ui plugins
 Plug 'nvimdev/lspsaga.nvim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'goolord/alpha-nvim'
+Plug 'rcarriga/nvim-notify'
+Plug 'folke/noice.nvim'
 
 -- utility
 Plug 'rmagatti/auto-session'
@@ -18,11 +20,13 @@ Plug 'nvim-lua/plenary.nvim' -- Common lua modules other plugins use
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'numToStr/Comment.nvim'
 Plug 'folke/which-key.nvim'
+Plug 'echasnovski/mini.icons'
 Plug 'folke/trouble.nvim'
 Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'mikesmithgh/kitty-scrollback.nvim'
 Plug 'nvim-neotest/nvim-nio'
 Plug('iamcco/markdown-preview.nvim', { ['do'] = vim.fn['cd app && npx --yes yarn install'] })
+-- Plug 'OXY2DEV/markview.nvim'
 
 -- tests
 Plug 'nvim-neotest/neotest'
@@ -65,6 +69,7 @@ Plug 'lervag/vimtex'
 Plug 'saecki/crates.nvim'
 Plug('mrcjkb/rustaceanvim', { tag = '3.9.5', ['for'] = 'rust' })
 Plug('epwalsh/obsidian.nvim', { tag = '*' })
+Plug 'ray-x/go.nvim'
 
 -- Syntax
 Plug 'nvim-treesitter/nvim-treesitter'
@@ -77,7 +82,7 @@ Plug 'hrsh7th/cmp-cmdline' -- cmdline completion
 Plug 'hrsh7th/cmp-nvim-lsp'
 
 -- snippets
-Plug('L3MON4D3/LuaSnip', { tag = 'v2.1.0', ['do'] = 'make install_jsregexp' })
+Plug('L3MON4D3/LuaSnip', { tag = 'v2.1.0' })
 Plug 'saadparwaiz1/cmp_luasnip' -- snippet completion
 Plug 'rafamadriz/friendly-snippets'
 
