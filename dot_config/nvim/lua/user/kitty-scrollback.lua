@@ -5,7 +5,14 @@ if not status_ok then
 end
 
 kitty_scrollback.setup({
+    -- global configuration
     {
-        restore_options = true,
+        status_window = {
+            autoclose = true,
+        },
+        paste_window = {
+            yank_register = 'unnamed',
+            yank_register_enabled = true,
+        },
     },
 })
