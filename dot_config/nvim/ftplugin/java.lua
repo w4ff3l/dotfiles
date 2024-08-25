@@ -13,6 +13,11 @@ local lombok_folder = home .. "/.local/share/nvim/mason/packages/jdtls/lombok.ja
 local jar = vim.fn.glob(home .. "/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar")
 local configuration = home .. "/.local/share/nvim/mason/packages/jdtls/config_linux"
 
+-- Get JVM home directories from environment to be system independent
+local JAVA_HOME_11 = os.getenv('JAVA_HOME_11')
+local JAVA_HOME_17 = os.getenv('JAVA_HOME_17')
+local JAVA_HOME_21 = os.getenv('JAVA_HOME_21')
+
 local config = {
     completion = {
         favoriteStaticMembers = {
@@ -80,15 +85,15 @@ local config = {
                 runtimes = {
                     {
                         name = "JavaSE-11",
-                        path = "/usr/lib/jvm/java-11-openjdk/",
+                        path = JAVA_HOME_11,
                     },
                     {
                         name = "JavaSE-17",
-                        path = "/usr/lib/jvm/java-17-openjdk/",
+                        path = JAVA_HOME_17,
                     },
                     {
                         name = "JavaSE-21",
-                        path = "/usr/lib/jvm/java-21-openjdk/",
+                        path = JAVA_HOME_21,
                     },
                 }
             }
