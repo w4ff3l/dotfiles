@@ -23,7 +23,7 @@ local config = {
         max_width = 0.9,
         max_height = 0.6,
         open_link = 'gx',
-        open_cmd = '!chrome',
+        open_cmd = '!firefox',
     },
 
     diagnostic = {
@@ -54,7 +54,7 @@ local config = {
         only_in_cursor = true,
         max_height = 0.3,
         keys = {
-            quit = 'q',
+            quit = '<ESC>',
             exec = '<CR>',
         },
     },
