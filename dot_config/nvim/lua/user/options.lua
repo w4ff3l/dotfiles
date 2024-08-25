@@ -38,5 +38,5 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     end,
 })
 
-vim.opt.conceallevel = 2
+vim.opt.conceallevel = 1
 
