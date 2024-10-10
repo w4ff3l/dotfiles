@@ -2,47 +2,53 @@ return {
     'ellisonleao/gruvbox.nvim',
     priority = 1000,
     config = function()
-vim.cmd.colorscheme('gruvbox')
+        vim.cmd.colorscheme('gruvbox')
 
--- Set special highlighting groups
-vim.api.nvim_set_hl(0, 'FloatBorder', { fg = '#ebdbb2' })
-vim.api.nvim_set_hl(0, 'FloatBorder', { bg = '#282828', fg = '#ebdbb2' })
-vim.api.nvim_set_hl(0, 'NormalFloat', { bg = '#282828' })
--- Telescope
-vim.api.nvim_set_hl(0, 'TelescopeNormal', { bg = '#282828' })
-vim.api.nvim_set_hl(0, 'TelescopeBorder', { bg = '#282828' })
--- Noice
-vim.api.nvim_set_hl(0, 'NoiceCmdlinePopupBorder', { bg = '#282828' })
-vim.api.nvim_set_hl(0, 'NoiceCmdlineIcon', { fg = '#98971a' })
-vim.api.nvim_set_hl(0, 'NoiceCmdlinePopupBorderSearch', { bg = '#282828' })
-vim.api.nvim_set_hl(0, 'NoiceCmdlineIconSearch', { bg = '#282828', fg = '#fabd2f'})
--- Notify
-vim.api.nvim_set_hl(0, "NotifyERRORBorder", { fg = "#cc142d" })
-vim.api.nvim_set_hl(0, "NotifyWARNBorder", { fg = "#d65d0e" })
-vim.api.nvim_set_hl(0, "NotifyINFOBorder", { fg = "#98971a" })
-vim.api.nvim_set_hl(0, "NotifyDEBUGBorder", { fg = "#458588" })
-vim.api.nvim_set_hl(0, "NotifyTRACEBorder", { fg = "#b16286" })
-vim.api.nvim_set_hl(0, "NotifyERRORIcon", { fg = "#fb4934" })
-vim.api.nvim_set_hl(0, "NotifyWARNIcon", { fg = "#fe8019" })
-vim.api.nvim_set_hl(0, "NotifyINFOIcon", { fg = "#b8bb26" })
-vim.api.nvim_set_hl(0, "NotifyDEBUGIcon", { fg = "#83a598" })
-vim.api.nvim_set_hl(0, "NotifyTRACEIcon", { fg = "#d3869b" })
-vim.api.nvim_set_hl(0, "NotifyERRORTitle", { fg = "#fb4934" })
-vim.api.nvim_set_hl(0, "NotifyWARNTitle", { fg = "#fe8019" })
-vim.api.nvim_set_hl(0, "NotifyINFOTitle", { fg = "#b8bb26" })
-vim.api.nvim_set_hl(0, "NotifyDEBUGTitle", { fg = "#83a598" })
-vim.api.nvim_set_hl(0, "NotifyTRACETitle", { fg = "#d3869b" })
-vim.api.nvim_set_hl(0, "NotifyERRORBody", { link = "Normal" })
-vim.api.nvim_set_hl(0, "NotifyWARNBody", { link = "Normal" })
-vim.api.nvim_set_hl(0, "NotifyINFOBody", { link = "Normal" })
-vim.api.nvim_set_hl(0, "NotifyDEBUGBody", { link = "Normal" })
-vim.api.nvim_set_hl(0, "NotifyTRACEBody", { link = "Normal" })
+        -- Hide all semantic highlights
+        for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
+            vim.api.nvim_set_hl(0, group, {})
+        end
+        -- Set special highlighting groups
+        vim.api.nvim_set_hl(0, 'FloatBorder', { fg = '#ebdbb2' })
+        vim.api.nvim_set_hl(0, 'FloatBorder', { bg = '#282828', fg = '#ebdbb2' })
+        vim.api.nvim_set_hl(0, 'NormalFloat', { bg = '#282828' })
+        -- Telescope
+        vim.api.nvim_set_hl(0, 'TelescopeNormal', { bg = '#282828' })
+        vim.api.nvim_set_hl(0, 'TelescopeBorder', { bg = '#282828' })
+        -- Noice
+        vim.api.nvim_set_hl(0, 'NoiceCmdlinePopupBorder', { bg = '#282828' })
+        vim.api.nvim_set_hl(0, 'NoiceCmdlineIcon', { fg = '#98971a' })
+        vim.api.nvim_set_hl(0, 'NoiceCmdlinePopupBorderSearch', { bg = '#282828' })
+        vim.api.nvim_set_hl(0, 'NoiceCmdlineIconSearch', { bg = '#282828', fg = '#fabd2f' })
+        -- Notify
+        vim.api.nvim_set_hl(0, "NotifyERRORBorder", { fg = "#cc142d" })
+        vim.api.nvim_set_hl(0, "NotifyWARNBorder", { fg = "#d65d0e" })
+        vim.api.nvim_set_hl(0, "NotifyINFOBorder", { fg = "#98971a" })
+        vim.api.nvim_set_hl(0, "NotifyDEBUGBorder", { fg = "#458588" })
+        vim.api.nvim_set_hl(0, "NotifyTRACEBorder", { fg = "#b16286" })
+        vim.api.nvim_set_hl(0, "NotifyERRORIcon", { fg = "#fb4934" })
+        vim.api.nvim_set_hl(0, "NotifyWARNIcon", { fg = "#fe8019" })
+        vim.api.nvim_set_hl(0, "NotifyINFOIcon", { fg = "#b8bb26" })
+        vim.api.nvim_set_hl(0, "NotifyDEBUGIcon", { fg = "#83a598" })
+        vim.api.nvim_set_hl(0, "NotifyTRACEIcon", { fg = "#d3869b" })
+        vim.api.nvim_set_hl(0, "NotifyERRORTitle", { fg = "#fb4934" })
+        vim.api.nvim_set_hl(0, "NotifyWARNTitle", { fg = "#fe8019" })
+        vim.api.nvim_set_hl(0, "NotifyINFOTitle", { fg = "#b8bb26" })
+        vim.api.nvim_set_hl(0, "NotifyDEBUGTitle", { fg = "#83a598" })
+        vim.api.nvim_set_hl(0, "NotifyTRACETitle", { fg = "#d3869b" })
+        vim.api.nvim_set_hl(0, "NotifyERRORBody", { link = "Normal" })
+        vim.api.nvim_set_hl(0, "NotifyWARNBody", { link = "Normal" })
+        vim.api.nvim_set_hl(0, "NotifyINFOBody", { link = "Normal" })
+        vim.api.nvim_set_hl(0, "NotifyDEBUGBody", { link = "Normal" })
+        vim.api.nvim_set_hl(0, "NotifyTRACEBody", { link = "Normal" })
 
-vim.cmd([[
-  autocmd ColorScheme * highlight Search cterm=underline ctermbg=NONE ctermfg=NONE gui=underline guibg=NONE guifg=NONE
-  autocmd ColorScheme * highlight IncSearch cterm=underline ctermbg=NONE ctermfg=NONE gui=underline guibg=NONE guifg=NONE
-]])
-	end,
+        vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { fg = "#ff8800" })
+
+        vim.cmd([[
+            autocmd ColorScheme * highlight Search cterm=underline ctermbg=NONE ctermfg=NONE gui=underline guibg=NONE guifg=NONE
+            autocmd ColorScheme * highlight IncSearch cterm=underline ctermbg=NONE ctermfg=NONE gui=underline guibg=NONE guifg=NONE
+        ]])
+    end,
     opts = {
         bold = true,
         italic = {
