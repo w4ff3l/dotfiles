@@ -7,13 +7,8 @@ return {
             return
         end
 
-        local neoscroll_config_status_config, neoscroll_config = pcall(require, 'neoscroll.config')
-        if not neoscroll_config_status_config then
-            print('Error loading neoscroll config...')
-            return
-        end
-
-        local options    = {
+        local options = {
+            mappings = {},
             hide_cursor = true,          -- Hide cursor while scrolling
             stop_eof = true,             -- Stop at <EOF> when scrolling downwards
             respect_scrolloff = false,   -- Stop scrolling when the cursor reaches the scrolloff margin of the file
@@ -24,18 +19,18 @@ return {
             performance_mode = false,    -- Disable "Performance Mode" on all buffers.
         }
 
-        local mapping    = {}
-        mapping['<C-u>'] = { 'scroll', { '-vim.wo.scroll', 'true', '180' } }
-        mapping['<C-d>'] = { 'scroll', { 'vim.wo.scroll', 'true', '180' } }
-        mapping['<C-b>'] = { 'scroll', { '-vim.api.nvim_win_get_height(0)', 'true', '450' } }
-        mapping['<C-f>'] = { 'scroll', { 'vim.api.nvim_win_get_height(0)', 'true', '450' } }
-        mapping['<C-y>'] = { 'scroll', { '-0.10', 'false', '100' } }
-        mapping['<C-e>'] = { 'scroll', { '0.10', 'false', '100' } }
-        mapping['zt']    = { 'zt', { '250' } }
-        mapping['zz']    = { 'zz', { '250' } }
-        mapping['zb']    = { 'zb', { '250' } }
-
         neoscroll.setup(options)
-        neoscroll_config.set_mappings(mapping)
+
+        local keymap = {
+            ['<C-u>'] = function() neoscroll.ctrl_u({ duration = 180 }) end,
+            ['<C-d>'] = function() neoscroll.ctrl_d({ duration = 180 }) end,
+            ['<C-b>'] = function() neoscroll.ctrl_b({ duration = 200 }) end,
+            ['<C-f>'] = function() neoscroll.ctrl_f({ duration = 200 }) end,
+        }
+
+        local modes = { 'n', 'v', 'x' }
+        for key, func in pairs(keymap) do
+            vim.keymap.set(modes, key, func)
+        end
     end
 }
