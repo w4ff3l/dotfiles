@@ -53,7 +53,7 @@ return {
             preselect = cmp.PreselectMode.None,
             snippet = {
                 expand = function(args)
-                    luasnip.lsp_expand(args.body)     -- For `luasnip` users.
+                    luasnip.lsp_expand(args.body) -- For `luasnip` users.
                 end,
             },
             window = {
@@ -65,7 +65,7 @@ return {
                 ['<C-j>'] = cmp.mapping.select_next_item(),
                 ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-1), { 'i', 'c' }),
                 ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(1), { 'i', 'c' }),
-                ['<C-y>'] = cmp.config.disable,     -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+                ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
                 ['<C-e>'] = cmp.mapping.abort(),
                 -- Accept currently selected item. If none selected, `select` first item.
                 -- Set `select` to `false` to only confirm explicitly selected items.
@@ -101,7 +101,7 @@ return {
                 select = false,
             },
             experimental = {
-                ghost_text = false,
+                ghost_text = true,
                 native_menu = false,
             },
         }
