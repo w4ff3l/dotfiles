@@ -12,8 +12,6 @@ end
 
 -- Leader
 set('', '<Space>', '<Nop>', opts)
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
 set('n', '<Esc>', '<cmd>noh<CR>')
 
 -- Better window navigation
@@ -38,13 +36,14 @@ set('n', '<leader>w', rhop.hint_words, opts)
 
 -- LSP
 set('n', 'gD', vim.lsp.buf.declaration, opts)
-set('n', 'gd', vim.lsp.buf.definition, opts)
+set('n', 'gd', function() require 'telescope.builtin'.lsp_definitions() end, opts)
 set('n', 'gi', vim.lsp.buf.implementation, opts)
 set('n', 'gt', vim.lsp.buf.type_definition, opts)
-set('n', 'gr', function() require('telescope.builtin').lsp_references() end, opts)
+set('n', 'gr', function() require 'telescope.builtin'.lsp_references() end, opts)
 set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
--- vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+set('i', '<C-k>', vim.lsp.buf.signature_help, opts)
 set('n', '<space>ca', '<cmd>Lspsaga code_action<CR>')
+set('v', '<space>ca', '<cmd>Lspsaga code_action<CR>')
 set('n', '<A-CR>', '<cmd>Lspsaga code_action<CR>')
 set('n', '<space>rn', '<cmd>Lspsaga rename<CR>')
 set('n', 'K', '<cmd>Lspsaga hover_doc<CR>')
@@ -60,3 +59,7 @@ set('n', '<space>rt', '<cmd>Neotest run<CR>')
 -- set('n', '<space>ot', '<cmd>Neotest summary<CR>')
 
 set_alias('Format', 'lua vim.lsp.buf.format()')
+set('n', '<space>f', ':Format<CR>')
+
+set_alias('HintsOn', 'lua vim.lsp.inlay_hint.enable(true)')
+set_alias('HintsOff', 'lua vim.lsp.inlay_hint.enable(false)')
