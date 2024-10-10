@@ -8,20 +8,26 @@ return {
         -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
     },
     opts = {
-        close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
+        auto_clean_after_session_restore = true, -- Automatically clean up broken neo-tree buffers saved in sessions
+        log_level = 'debug',                     -- "trace", "debug", "info", "warn", "error", "fatal"
+        log_to_file = true,                      -- true, false, "/path/to/file.log", use :NeoTreeLogs to
+        close_if_last_window = false,            -- Close Neo-tree if it is the last window left in the tab
         popup_border_style = 'rounded',
         enable_git_status = true,
         enable_diagnostics = true,
+        enable_modified_markers = true, -- Show markers for files with unsaved changes.
+        enable_refresh_on_write = true, -- Refresh the tree when a file is written. Only used if `use_libuv_file_watcher` is false.
+        git_status_async = true,
+        git_status_async_options = {
+            batch_size = 1000, -- how many lines of git status results to process at a time
+            batch_delay = 10,  -- delay in ms between batches. Spreads out the workload to let other processes run.
+            max_lines = 10000, -- How many lines of git status results to process. Anything after this will be dropped.
+            -- Anything before this will be used. The last items to be processed are the untracked files.
+        },
+        async_directory_scan = 'auto',
         open_files_do_not_replace_types = { 'terminal', 'trouble', 'qf' }, -- when opening files, do not use windows containing these filetypes or buftypes
         sort_case_insensitive = false,                                     -- used when sorting files and directories in the tree
         sort_function = nil,                                               -- use a custom function for sorting files and directories in the tree
-        -- sort_function = function (a,b)
-        --       if a.type == b.type then
-        --           return a.path > b.path
-        --       else
-        --           return a.type > b.type
-        --       end
-        --   end , -- this sorts files and directories descendantly
         default_component_configs = {
             container = {
                 enable_character_fade = true
@@ -82,8 +88,6 @@ return {
         -- see `:h neo-tree-global-custom-commands`
         commands = {},
         window = {
-            position = 'left',
-            width = 30,
             mapping_options = {
                 noremap = true,
                 nowait = true,
@@ -139,10 +143,11 @@ return {
                 ['>'] = 'next_source',
             }
         },
-        nesting_rules = {},
         filesystem = {
+            async_directory_scan = true,
             filtered_items = {
                 visible = false, -- when true, they will just be displayed differently than normal items
+                respect_gitignore = true,
                 hide_dotfiles = false,
                 hide_gitignored = false,
             },
@@ -152,13 +157,8 @@ return {
                 leave_dirs_open = true,             -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
             },
             group_empty_dirs = true,                -- when true, empty folders will be grouped together
-            scan_mode = "deep",
             hijack_netrw_behavior = 'open_default', -- netrw disabled, opening a directory opens neo-tree
-            -- in whatever position is specified in window.position
-            -- 'open_current',  -- netrw disabled, opening a directory opens within the
-            -- window like netrw would, regardless of window.position
-            -- 'disabled',    -- netrw left alone, neo-tree does not handle opening dirs
-            use_libuv_file_watcher = false, -- This will use the OS level file watchers to detect changes
+            use_libuv_file_watcher = true,          -- This will use the OS level file watchers to detect changes
             -- instead of relying on nvim autocmd events.
             window = {
                 mappings = {
@@ -181,7 +181,6 @@ return {
                     ['<C-k>'] = 'move_cursor_up',
                 },
             },
-
             commands = {} -- Add a custom command or override a global one using the same function name
         },
         buffers = {
