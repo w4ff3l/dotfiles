@@ -1,0 +1,1 @@
+pulseaudio-control --node-blacklist "alsa_output.pci-0000_08_00.1.hdmi-stereo, alsa_output.pci-0000_0a_00.4.pro-output-0, alsa_output.pci-0000_0a_00.4.pro-output-1, alsa_output.usb-Sony_Interactive_Entertainment_Wireless_Controller-00.analog-surround-40" next-node
