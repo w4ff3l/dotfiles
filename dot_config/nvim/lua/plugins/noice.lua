@@ -1,12 +1,8 @@
 return {
     'folke/noice.nvim',
-    event = 'VeryLazy',
+    -- event = 'VeryLazy',
     dependencies = {
-        -- if you lazy-load any plugin below, make sure to add proper `module='...'` entries
         'MunifTanjim/nui.nvim',
-        -- OPTIONAL:
-        --   `nvim-notify` is only needed, if you want to use the notification view.
-        --   If not available, we use `mini` as the fallback
         'rcarriga/nvim-notify',
     },
     opts = {
@@ -114,7 +110,7 @@ return {
         },
         lsp = {
             progress = {
-                enabled = true,
+                enabled = false,
                 -- Lsp Progress is formatted using the builtins for lsp_progress. See config.format.builtin
                 -- See the section on formatting for more details on how to customize.
                 --- @type NoiceFormat|string
@@ -140,16 +136,16 @@ return {
                 opts = {},      -- merged with defaults from documentation
             },
             signature = {
-                enabled = true,
+                enabled = false,
                 auto_open = {
-                    enabled = true,
-                    trigger = true, -- Automatically show signature help when typing a trigger character from the LSP
-                    luasnip = true, -- Will open signature help when jumping to Luasnip insert nodes
-                    throttle = 50,  -- Debounce lsp signature help request by 50ms
+                    enabled = false,
+                    trigger = false, -- Automatically show signature help when typing a trigger character from the LSP
+                    luasnip = false, -- Will open signature help when jumping to Luasnip insert nodes
+                    throttle = 50,   -- Debounce lsp signature help request by 50ms
                 },
-                view = nil,         -- when nil, use defaults from documentation
+                view = nil,          -- when nil, use defaults from documentation
                 ---@type NoiceViewOptions
-                opts = {},          -- merged with defaults from documentation
+                opts = {},           -- merged with defaults from documentation
             },
             message = {
                 -- Messages shown by lsp servers
