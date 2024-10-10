@@ -25,7 +25,7 @@ return {
             path_display = filenameFirst,
             layout_strategy = 'horizontal',
             layout_config = {
-                horizontal = { width = 0.95, height = 0.95 },
+                horizontal = { width = 0.8, height = 0.8 },
                 preview_width = 0.5,
             },
         },
@@ -34,9 +34,11 @@ return {
                 sort_mru = true,
                 layout_strategy = 'horizontal',
                 layout_config = {
-                    horizontal = { width = 0.95, height = 0.95 },
+                    horizontal = { width = 0.6, height = 0.5 },
                     preview_width = 0.5,
                 },
+                initial_mode = "normal",
+                previewer = false,
             }
         }
     },
