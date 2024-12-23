@@ -127,6 +127,10 @@ return {
                         end
                     end,
                 },
+                ['<CR>'] = cmp.mapping.confirm {
+                    behavior = cmp.ConfirmBehavior.Insert,
+                    select = true,
+                },
             }),
             sources = {
                 { name = 'buffer' }
