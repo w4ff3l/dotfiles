@@ -18,7 +18,6 @@ end
 return {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.8',
-    -- or                              , branch = '0.1.x',
     dependencies = { 'nvim-lua/plenary.nvim' },
     opts = {
         defaults = {
@@ -38,7 +37,8 @@ return {
                     preview_width = 0.5,
                 },
                 initial_mode = "normal",
-                previewer = false,
+                ignore_current_buffer = true,
+                sort_lastused = true,
             }
         }
     },
