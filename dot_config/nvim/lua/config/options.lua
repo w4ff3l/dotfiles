@@ -21,6 +21,7 @@ local options = {
     updatetime = 300,
     wrap = false,
     writebackup = false,
+    conceallevel = 0,
 }
 
 vim.opt.shortmess:append 'c'
@@ -37,6 +38,4 @@ vim.api.nvim_create_autocmd('TextYankPost', {
         vim.highlight.on_yank { higroup = 'IncSearch', timeout = 300 }
     end,
 })
-
-vim.opt.conceallevel = 1
 
