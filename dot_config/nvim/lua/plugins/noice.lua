@@ -1,6 +1,7 @@
 return {
     'folke/noice.nvim',
     -- event = 'VeryLazy',
+    enabled = true,
     dependencies = {
         'MunifTanjim/nui.nvim',
         'rcarriga/nvim-notify',
@@ -22,7 +23,7 @@ return {
                 search_up = { kind = "search", pattern = "^%?", icon = " ", lang = "regex" },
                 filter = { pattern = "^:%s*!", icon = "$", lang = "bash" },
                 lua = { pattern = { "^:%s*lua%s+", "^:%s*lua%s*=%s*", "^:%s*=%s*" }, icon = "", lang = "lua" },
-                help = { pattern = "^:%s*he?l?p?%s+", icon = "" },
+                help = { pattern = "^:%s*he?l?p?%s+", icon = "󰋖" },
                 input = { view = "cmdline_input", icon = "󰥻 " }, -- Used by input()
                 -- lua = false, -- to disable a format, set to `false`
             },
@@ -110,7 +111,7 @@ return {
         },
         lsp = {
             progress = {
-                enabled = false,
+                enabled = true,
                 -- Lsp Progress is formatted using the builtins for lsp_progress. See config.format.builtin
                 -- See the section on formatting for more details on how to customize.
                 --- @type NoiceFormat|string
